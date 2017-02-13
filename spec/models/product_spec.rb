@@ -34,6 +34,16 @@ RSpec.describe Product, type: :model do
     let(:ipad) { Product.create title: 'iPad', active: true, company: apple }
     let(:iphone) { Product.create title: 'iPhone', active: true, company: apple }
 
+    context 'empty search' do
+      subject { Product.search('') }
+      it { is_expected.to include iphone, ipad }
+    end
+
+    context 'nil search' do
+      subject { Product.search(nil) }
+      it { is_expected.to include iphone, ipad }
+    end
+
     context 'search phon' do
       subject { Product.search('phon') }
       it { is_expected.to include iphone }

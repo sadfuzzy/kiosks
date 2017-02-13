@@ -11,7 +11,7 @@ class Product < ApplicationRecord
       if search
         by_title(search)
       else
-        scoped
+        all
       end
     end
   end
