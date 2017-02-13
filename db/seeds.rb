@@ -6,18 +6,16 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Company.create [
-  { title: 'Ford', active: true },
-  { title: 'Apple', active: true },
-  { title: 'GM', active: false }
-]
+ford = Company.create title: 'Ford', active: true
+apple = Company.create title: 'Apple', active: true
+gm = Company.create title: 'GM', active: false
 
 Product.create [
-  { title: 'Focus 1', active: false, company_id: 1 },
-  { title: 'Focus 3', active: true, company_id: 1 },
-  { title: 'iPhone 1', active: false, company_id: 2 },
-  { title: 'iPhone 5', active: true, company_id: 2 },
-  { title: 'iPhone 6', active: true, company_id: 2 },
-  { title: 'Apache', active: false, company_id: 3 },
-  { title: 'Spark', active: true, company_id: 3 }
+  { title: 'Focus 1', active: false, company: ford },
+  { title: 'Focus 3', active: true, company: ford },
+  { title: 'iPhone 1', active: false, company: apple },
+  { title: 'iPhone 5', active: true, company: apple },
+  { title: 'iPhone 6', active: true, company: apple },
+  { title: 'Apache', active: false, company: gm },
+  { title: 'Spark', active: true, company: gm }
 ]

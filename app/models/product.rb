@@ -4,14 +4,14 @@ class Product < ApplicationRecord
   belongs_to :company
 
   scope :active, -> { joins(:company).where(active: true, companies: { active: true }) }
-  scope :by_title, -> (query) { where('title ILIKE ?', "%#{query}%") }
+  scope :by_title, -> (query) { where('products.title ILIKE ?', "%#{query}%") }
 
   class << self
     def search(search)
       if search
         by_title(search)
       else
-        all
+        active
       end
     end
   end

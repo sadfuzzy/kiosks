@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
   def index
-    @products = Product.search(params[:search])
+    @products = Product.includes(:company).active.search(params[:search])
   end
 end
