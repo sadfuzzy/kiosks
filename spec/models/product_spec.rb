@@ -28,4 +28,22 @@ RSpec.describe Product, type: :model do
     it { is_expected.to include product1 }
     it { is_expected.to_not include product2, product3 }
   end
+
+  describe '#search' do
+    let(:apple) { Company.create title: 'Apple', active: true }
+    let(:ipad) { Product.create title: 'iPad', active: true, company: apple }
+    let(:iphone) { Product.create title: 'iPhone', active: true, company: apple }
+
+    context 'search phon' do
+      subject { Product.search('phon') }
+      it { is_expected.to include iphone }
+      it { is_expected.to_not include ipad }
+    end
+
+    context 'search ipa (not beer)' do
+      subject { Product.search('ipa') }
+      it { is_expected.to include ipad }
+      it { is_expected.to_not include iphone }
+    end
+  end
 end
