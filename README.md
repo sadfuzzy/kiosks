@@ -1,24 +1,25 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Задание:
 
-Things you may want to cover:
+Приложение на Ruby on Rails - поиск по каталогу товаров (одна страница).
+Поиск производится только по имени товара.
+Поиск должен осуществляться без перезагрузки страницы.
+Товар отображается в результатах поиска, если
+1. у него атрибут active: true
+2. у компании к которой он привязан active: true.
 
-* Ruby version
+В приложении есть две сущности:
+- товар (название, описание, активность, привязка к компании)
+- компания (название, активность)
 
-* System dependencies
+Не надо делать:
 
-* Configuration
+- пагинацию по результатам поиска
+- интерфейсы для создания / добавления / обновления компаний и товаров
 
-* Database creation
+В приложенном файле html шаблон поиска.
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Результат выполнения: исходный код приложения на гитхабе, с
+инструкцией как его запустить.
+Время на выполнение: 10 дней
