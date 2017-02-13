@@ -40,6 +40,12 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'pry-rails'
   gem 'rspec-rails'
+
+  gem 'shoulda-matchers'
+
+  gem 'guard-rails', require: false
+  gem 'guard-rspec', require: false
+  gem 'guard-bundler', require: false
 end
 
 group :development do
